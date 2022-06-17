@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import axios from 'axios'
 import NasaPhoto from './components/NasaPhoto'
+import styled from 'styled-components'
+
+const Style = styled.div`
+  background-color: black;
+  height: 100%;
+`
 
 function App() {
   const [data, setData] = useState()
@@ -16,7 +22,7 @@ function App() {
       })
       .catch((err) => console.error(err))
   }, [])
-  return <div className='App'>{data && <NasaPhoto photo={data} />}</div>
+  return <Style className='App'>{data && <NasaPhoto photo={data} />}</Style>
 }
 
 export default App
